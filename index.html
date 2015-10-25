@@ -1,0 +1,23 @@
+<html>
+    <head>
+		<link rel='stylesheet' href='snazCal.css'/>
+		<style>
+			input[name=calendar] {
+			}
+			#calendar {
+				height: 20px;
+			}
+		</style>
+    </head>
+    <body>
+		<form>
+		</form>
+		<span>click the input to launch SnazCal&nbsp;</span>
+        <input name='calendar' />
+		<!-- <div id='calendar' tabindex="0">Test</div> -->
+        <script src='snazCal.js'></script>
+        <script>
+			var cal = new SnazCal({bound: true, element: document.getElementsByName('calendar')[0], firstDay: 1, roundedEdges: true});
+        </script>
+    </body>
+</html>
