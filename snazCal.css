@@ -10,7 +10,6 @@
 	background: rgba(202,37,37,.5);
 }
 .snaz-cal {
-	width: 280px;
 	display: none;
 	background: #eee;
 	border-radius: 3px;
@@ -42,7 +41,7 @@
 	outline: 0px;
 	border-radius: 100%;
 	font-weight: bold;
-	border: 2px solid #555;
+	border: 1px solid #555;
 	color: #555;
 }
 .snaz-control:after {
@@ -57,16 +56,28 @@
 .snaz-control.prev {
 	left: 10px;
 }
-.snaz-control.prev:after {
-	content: "<";
-	left: -1px;
+.snaz-control.prev:after,
+.snaz-control.next:after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-right: 1px solid #555;
+    border-top: 1px solid #555;
+    position: absolute;
+    top: 6px;
+    left: 7px;
+    -webkit-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    transform: rotate(-135deg);
 }
 .snaz-control.next {
 	right: 10px;
 }
 .snaz-control.next:after {
-	content: ">";
-	left: 1px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 5px;
 }
 .snaz-control:focus {
 	border-color: #8dc63f;
@@ -137,18 +148,22 @@
 	clear: both;
 }
 .snaz-days-cont {
-	width: 100%;
+	width: -webkit-calc(30px * 7 + (10px * 2));
+	width: -ms-calc(30px * 7 + (10px * 2));
+	width: calc(30px * 7 + (10px * 2));
 	padding: 10px;
 	padding-top: 0px;
 }
 .snaz-day {
-	float: left;
+	display: inline-block;
 	position: relative;
 	font-size: 11px;
 	font-weight: bold;
-	width: calc(100% / 7);
+	width: 30px;
+	height: 30px;
 	outline: 0px;
 	color: #555;
+	border-radius: 50%;
 }
 .snaz-day:before {
 	content: "";
